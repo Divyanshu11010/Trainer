@@ -123,6 +123,29 @@ body {
     background: none;
 }
 
+#switch {
+    background-color: #007BFF;
+    width: 100%;
+    margin-left: 5px;
+    margin-top: 5px;
+    color: white;
+    border: none;
+    border-radius: 16px;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+#switch:hover {
+    background-color: #0056b3;
+}
+
+#switch:active {
+    transform: scale(0.95);
+}
+
 @media (max-width: 1000px) {
     body {
         flex-direction: column;
@@ -148,5 +171,10 @@ body {
     #white {
         font-size: 14px;
         padding: 10px 12px;
+    }
+
+    #switch {
+        font-size: 14px;
+        padding: 8px 16px;
     }
 }
