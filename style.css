@@ -1,0 +1,152 @@
+body {
+    display: flex;
+    align-items: center;
+    background-color: rgb(205, 204, 203);
+}
+
+.Board {
+    border-collapse: collapse;
+    width: 600px;
+    height: 600px;
+}
+
+.Board td {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 22px;
+}
+
+.Board tr:nth-child(even) td:nth-child(odd),
+.Board tr:nth-child(odd) td:nth-child(even) {
+    background-color: #333;
+    color: white;
+}
+
+.Board tr:nth-child(even) td:nth-child(even),
+.Board tr:nth-child(odd) td:nth-child(odd) {
+    background-color: #eee;
+}
+
+.Board {
+    border-collapse: collapse;
+}
+
+.Board td {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #000;
+    text-align: center;
+    cursor: pointer;
+}
+
+.Quest {
+    padding: 10px;
+    margin: auto;
+}
+
+#square {
+    text-align: center;
+    font-size: 50pt;
+    font-weight: bold;
+    font-family: cursive;
+}
+
+#black,
+#white {
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    font-family: din-round, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .8px;
+    line-height: 20px;
+    margin: 5px;
+    outline: none;
+    overflow: visible;
+    padding: 13px 16px;
+    text-align: center;
+    text-transform: uppercase;
+    touch-action: manipulation;
+    transform: translateZ(0);
+    transition: filter .2s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 100%;
+}
+
+#black {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+#black:after,
+#white:after {
+    background-clip: padding-box;
+    border: solid transparent;
+    border-radius: 16px;
+    bottom: -4px;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+}
+
+#white {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+#black:hover:not(:disabled),
+#white:hover:not(:disabled) {
+    filter: brightness(1.5);
+    -webkit-filter: brightness(1.5);
+}
+
+#black:disabled,
+#white:disabled {
+    cursor: auto;
+}
+
+#black:active,
+#white:active {
+    border-width: 4px 0 0;
+    background: none;
+}
+
+@media (max-width: 1000px) {
+    body {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Board {
+        width: 300px;
+        height: 300px;
+    }
+
+    .Board td {
+        width: 20px;
+        height: 20px;
+        font-size: 16px;
+    }
+
+    #square {
+        font-size: 36pt;
+    }
+
+    #black,
+    #white {
+        font-size: 14px;
+        padding: 10px 12px;
+    }
+}
