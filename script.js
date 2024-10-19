@@ -50,13 +50,39 @@ function setSquareColor() {
 function generate() {
     let i = Math.floor(Math.random() * squares.length);
     sName.innerHTML = squares[i];
-    console.log(squares[i]);
+    console.log();
+}
+
+function checkColor() {
+    let value = sName.innerHTML;
+    let first = value.charCodeAt(0) - 64;
+    let second = value[1];
+
+    if ((first % 2 === 0 && second % 2 === 0) || (first % 2 !== 0 && second % 2 !== 0))
+        return "black";
+    else return "white";
+}
+
+function fRouter() {
+    document.addEventListener('click', function (event) {
+        let curr_color = checkColor();
+        let curr_button_color = null;
+
+        if (event.target.tagName === 'BUTTON') {
+            curr_button_color = event.target.id;
+            console.log(`Button with id ${event.target.id} was clicked`);
+        }
+
+        if (curr_color === curr_button_color) {
+            generate()
+        }
+    })
 }
 
 generate();
 
-document.getElementById("black").addEventListener("click", generate);
-document.getElementById("white").addEventListener("click", generate);
+document.getElementById("black").addEventListener("click", fRouter);
+document.getElementById("white").addEventListener("click", fRouter);
 
 document.getElementById("switch").addEventListener("click", function () {
     isWhiteBoard = !isWhiteBoard;
